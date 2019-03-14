@@ -1,5 +1,4 @@
 # Workout 1
-================
 
 ### Introduction
 
