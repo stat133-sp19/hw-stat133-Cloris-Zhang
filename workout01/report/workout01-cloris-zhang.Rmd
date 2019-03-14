@@ -1,0 +1,43 @@
+---
+title: "workout01"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(knitr)
+library(readr)
+
+
+shots_chart <-read.csv("../data/shots-data.csv", stringsAsFactors = FALSE) 
+
+two_pt_shot_chart <- shots_chart %>% 
+  group_by(name) %>% 
+  summarise(
+  total = sum(shot_type == "2PT Field Goal"),
+  made  = sum(shot_type ==  "2PT Field Goal" & shot_made_flag == "shot_yes" ),
+  perc_made = made/total) %>%arrange(desc(perc_made))
+
+three_pt_shot_chart <- shots_chart %>%
+  group_by(name) %>%
+  summarise(total = sum(shot_type == "3PT Field Goal"),
+            made  = sum(shot_type ==  "3PT Field Goal" & shot_made_flag == "shot_yes" ),
+            perc_made = made/total
+            ) %>%
+  arrange(desc(perc_made))
+  
+effective_shot_chart <- shots_chart %>%
+  group_by(name) %>%
+  summarise(total = length(shot_type),
+            made  =  sum(shot_made_flag == "shot_yes") ,
+            perc_made = made/total
+            ) %>%
+  arrange(desc(perc_made))
+
+
+```
+
