@@ -1,0 +1,13 @@
+name: Workout02
+title: Workout02
+username:
+account: cloriszhang
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 871493
+bundleId: 2017770
+url: https://cloriszhang.shinyapps.io/Workout02/
+when: 1555484932.53604
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: workout02.pdf
