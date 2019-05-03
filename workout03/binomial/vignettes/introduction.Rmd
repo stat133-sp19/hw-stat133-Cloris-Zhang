@@ -1,0 +1,75 @@
+---
+title: "Getting Started with binomial"
+author: "Cloris Zhang"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to binomial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(binomial)
+```
+
+## Binomial
+The package "binomial" is a self-created implemenetation for calculating the binomial distribution given the number and probability of success in a fixed number of random trials performed, and to visualize such probability distribution.
+
+
+## Calculates the number of combinations in which k successes can occur in n trials
+
+For example, the number of combinations in which k = 2 successes can occur in n = 5 trials is 
+```{r}
+bin_choose(n = 5, k = 2)
+```
+
+## Calculate the probability of getting certain success in certain trials
+
+For example, probability of getting 2 successes in 5 trials (assume the probability of success is 0.5)
+```{r}
+bin_probability(success = 2, trials = 5, prob = 0.5)
+```
+
+## Compute the probability distribution
+For example, binomial probability distribution of different successes in five trials (assume the probability of success is 0.5)
+```{r}
+dis1 <- bin_distribution(trials = 5, prob = 0.5)
+dis1
+```
+
+## Graph a barplot to display the probability histogram of a binomial distribution object "bindis"
+```{r}
+plot.bindis(dis1)
+```
+It gives us an visualization of the probabilities with a bar-graph to show the distribution for each success level given a constant number of trials. 
+
+## Compute the probability distribution and the cumulative distribution
+For example, binomial cumulative distribution of different successes in five trials (assume the probability of success is 0.5)
+```{r}
+dis2 <- bin_cumulative(trials = 5, prob = 0.5)
+```
+
+## Graph the cumulative distribution of an object "bincum"
+```{r}
+plot.bincum(dis2)
+```
+It gives us an visualization of the probabilities with a line-plot to show the cumulation of ascending success levels.
+
+## Create binomial variable using given number of trials and successes
+```{r}
+bin1 <- bin_variable(trials = 10, p = 0.3)
+bin1
+```
+
+## Obtain the summary of the binomial distribution with given trials and probability inputs
+
+The `summary()` function will give you the full summary description of the object and the `print.summary()` function will give a nicely contents of the summary output
+
+```{r}
+summary.binvar(bin1)
+```
+
+
+## 
