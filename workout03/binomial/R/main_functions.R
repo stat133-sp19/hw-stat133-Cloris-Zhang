@@ -63,7 +63,7 @@ bin_distribution <- function(trials, prob) {
 plot.bindis <- function(dat) {
   prob <- dat$probability
   names(prob) <- dat$success
-  barplot(prob, border = NA)
+  barplot(prob, border = NA, xlab = 'successes', ylab = 'probability')
 }
 
 #' @title Binomial Cumulative Distribution
@@ -91,7 +91,7 @@ bin_cumulative <- function(trials, prob) {
 #' @export
 plot.bincum <- function(dat) {
   cum <- dat$cumulative
-  plot(dat$success, cum, type='o')
+  plot(dat$success, cum, type='o', xlab = 'successes', ylab = 'probability')
 }
 
 #' @title Binomial Variable

@@ -4,8 +4,9 @@ Title: Binomial
 Version: 0.1.0
 Author: Cloris Zhang
 Maintainer: Cloris Zhang <cloriszhang@berkeley.edu>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Calculate the binomial distribution given the number and
+probability of success in a fixed number of random trials performed, 
+and to visualize such probability distribution.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
